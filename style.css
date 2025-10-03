@@ -1,1 +1,102 @@
 
+:root{
+  --bg:#0f1720;
+  --card:#161a1f;
+  --accent-green:#4caf50;
+  --muted:#9aa3a8;
+  --soft:#2b7a2b;
+  --glass: rgba(255,255,255,0.03);
+  --rounded:14px;
+  --text:#f6f7f8;
+  --brand:#7fd5a0;
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#081017 0%, #0d1418 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Screens */
+.screen{display:none; padding:20px 0 40px}
+.screen.active{display:block}
+
+/* Splash */
+.splash-inner{
+  max-width:420px;
+  margin:6vh auto;
+  text-align:center;
+  padding:36px 20px;
+  background:linear-gradient(180deg, rgba(43,122,43,0.14), rgba(2,8,6,0.08));
+  border-radius:18px;
+}
+.logo-circle{
+  width:140px;height:140px;margin:0 auto 18px;border-radius:18px;
+  background:linear-gradient(180deg,#3d7f3d,#2b6b2b);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 18px rgba(0,0,0,0.45);
+}
+.logo-svg{width:72px;height:72px}
+.brand{font-size:32px;margin:8px 0 18px;color:var(--brand);letter-spacing:0.5px}
+.brand span{color:#33c1a3}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;border:none;cursor:pointer;font-weight:600}
+.btn.primary{background:#0b3a0b;color:white}
+
+/* Topbar */
+.topbar{display:flex;align-items:center;gap:12px;padding:8px 18px}
+.topbar h2{flex:1;margin:0;font-size:18px}
+.icon{background:transparent;color:var(--text);border:none;font-size:18px;padding:8px;border-radius:8px;cursor:pointer}
+.icon.back{background:var(--glass)}
+
+/* Layout */
+.container{max-width:980px;margin:14px auto;padding:0 18px}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:16px;border-radius:12px;margin-bottom:14px;box-shadow: 0 6px 18px rgba(0,0,0,0.5)
+}
+
+/* Menu grid */
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.menu-btn{
+  display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px;border-radius:12px;border:none;cursor:pointer;background:linear-gradient(180deg,#1b1f23,#111315);
+}
+.menu-btn .ico{font-size:28px}
+.menu-btn .label{font-weight:600;color:var(--text)}
+
+/* Quick info */
+.quick-info p{color:var(--muted)}
+
+/* Schedule table */
+.schedule-table{width:100%;border-collapse:collapse;font-size:14px}
+.schedule-table thead th{ text-align:left;padding:10px;color:var(--muted);font-weight:700}
+.schedule-table tbody td{padding:12px;border-top:1px solid rgba(255,255,255,0.03)}
+
+/* Monitoramento */
+.stats-row{display:flex;gap:12px;flex-wrap:wrap}
+.stat{flex:1;min-width:220px}
+.progress{height:14px;background:rgba(255,255,255,0.04);border-radius:20px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent-green),#2db86a);transition:width .7s ease}
+#gauge{font-size:24px;padding:10px}
+
+/* Indicators */
+.indicators{list-style:none;padding:0;margin:0;display:flex;gap:12px}
+.indicators li{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.red{background:#f05454}
+.dot.green{background:#4caf50}
+.dot.yellow{background:#f5b800}
+
+/* Responsive */
+@media (max-width:640px){
+  .menu-grid{grid-template-columns:1fr 1fr}
+  .splash-inner{margin-top:10vh;padding:22px}
+  .brand{font-size:28px}
+  .container{padding:0 12px}
+}
