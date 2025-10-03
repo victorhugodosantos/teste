@@ -1,1 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bem Estar - Protótipo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Splash / Tela de Abertura -->
+  <main id="app">
+    <section id="splash" class="screen active">
+      <div class="splash-inner">
+        <div class="logo-circle">
+          <!-- Simples símbolo, você pode substituir por imagem -->
+          <svg viewBox="0 0 100 100" class="logo-svg" aria-hidden="true">
+            <g fill="#2b7a2b">
+              <circle cx="50" cy="28" r="8"></circle>
+              <path d="M20 70 C40 40, 60 40, 80 70 L50 60 Z" />
+            </g>
+          </svg>
+        </div>
+        <h1 class="brand">bem<span>estar</span></h1>
+        <button class="btn primary" id="enterApp">Entrar</button>
+      </div>
+    </section>
 
+    <!-- Menu Principal -->
+    <section id="menu" class="screen">
+      <header class="topbar">
+        <button class="icon back" data-target="splash" title="Voltar">&larr;</button>
+        <h2>Bem Estar</h2>
+      </header>
+      <div class="container">
+        <div class="card menu-grid">
+          <button class="menu-btn" data-target="alimentacao">
+            <div class="ico">🍎</div>
+            <div class="label">Alimentação</div>
+          </button>
+          <button class="menu-btn" data-target="exercicios">
+            <div class="ico">🏃</div>
+            <div class="label">Exercícios</div>
+          </button>
+          <button class="menu-btn" data-target="horario">
+            <div class="ico">📅</div>
+            <div class="label">Horário de Aulas</div>
+          </button>
+          <button class="menu-btn" data-target="monitoramento">
+            <div class="ico">📊</div>
+            <div class="label">Monitoramento</div>
+          </button>
+        </div>
+
+        <div class="card quick-info">
+          <h3>Hoje</h3>
+          <p>Sem registros recentes. Use o menu acima para navegar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horário de Aulas -->
+    <section id="horario" class="screen">
+      <header class="topbar">
+        <button class="icon back" data-target="menu" title="Voltar">&larr;</button>
+        <h2>Horário de Aulas</h2>
+      </header>
+      <div class="container">
+        <div class="card">
+          <table class="schedule-table" aria-label="Horário de Aulas">
+            <thead>
+              <tr>
+                <th>Horário</th>
+                <th>Atividade</th>
+                <th>Detalhes</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleBody">
+              <!-- preenchido pelo JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Monitoramento -->
+    <section id="monitoramento" class="screen">
+      <header class="topbar">
+        <button class="icon back" data-target="menu" title="Voltar">&larr;</button>
+        <h2>Monitoramento</h2>
+      </header>
+      <div class="container">
+        <div class="card stats-row">
+          <div class="stat">
+            <h4>Progresso</h4>
+            <div class="progress">
+              <div id="progressBar" class="progress-fill" style="width: 45%"></div>
+            </div>
+            <small id="progressText">45%</small>
+          </div>
+          <div class="stat">
+            <h4>Índice de Saúde</h4>
+            <div id="gauge" class="gauge">—</div>
+          </div>
+        </div>
+
+        <div class="card charts">
+          <h3>Distribuição de Atividades</h3>
+          <canvas id="pieChart" width="300" height="180"></canvas>
+        </div>
+
+        <div class="card">
+          <h3>Indicadores</h3>
+          <ul class="indicators">
+            <li><span class="dot red"></span> Alto esforço</li>
+            <li><span class="dot green"></span> Equilíbrio</li>
+            <li><span class="dot yellow"></span> Atenção</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Páginas fictícias (Alimentação / Exercícios) -->
+    <section id="alimentacao" class="screen">
+      <header class="topbar">
+        <button class="icon back" data-target="menu" title="Voltar">&larr;</button>
+        <h2>Alimentação</h2>
+      </header>
+      <div class="container">
+        <div class="card">
+          <p>Registro de refeições, calorias e hábitos alimentares (exemplo).</p>
+          <ul id="mealsList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="exercicios" class="screen">
+      <header class="topbar">
+        <button class="icon back" data-target="menu" title="Voltar">&larr;</button>
+        <h2>Exercícios</h2>
+      </header>
+      <div class="container">
+        <div class="card">
+          <p>Registre treinos, tempos e metas.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
